@@ -1,0 +1,40 @@
+{
+  "name": "npmruncommit",
+  "version": "1.0.0",
+  "description": "使用 npm run commit 提交代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git add -A && git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wx982953267/npmRunCommit.git"
+  },
+  "keywords": [
+    "commit"
+  ],
+  "author": "wx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wx982953267/npmRunCommit/issues"
+  },
+  "homepage": "https://github.com/wx982953267/npmRunCommit#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
